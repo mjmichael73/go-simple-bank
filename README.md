@@ -50,3 +50,8 @@ Note: In postgres Password is not required when you are connecting locally.
     - wget https://github.com/golang-migrate/migrate/releases/download/v4.17.0/migrate.linux-amd64.deb
     - sudo dpkg -i migrate.linux-amd64.deb
     - migrate --version
+
+
+### Migration commands:
+
+    - migrate create -ext sql -dir db/migration -seq init_schema
