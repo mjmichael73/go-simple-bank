@@ -55,3 +55,26 @@ Note: In postgres Password is not required when you are connecting locally.
 ### Migration commands:
 
     - migrate create -ext sql -dir db/migration -seq init_schema
+    - migrate --path db/migration --database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" --verbose up
+
+### PostgreSQL commands:
+
+    - docker exec -it postgres12 /bin/sh
+    - createdb --username=root --owner=root simple_bank
+    - psql simple_bank
+    - \q
+    - dropdb simple_bank
+    - exit
+    - docker exec -it postgres12 createdb --username=root --owner=root simple_bank
+    - docker exec -it postgres12 psql -U root simple_bank
+    - docker exec -it postgres12 dropdb simple_bank
+
+### Make file usage:
+
+    - make postgres
+    - make createdb
+    - make dropdb
+
+### First migration:
+
+    - migrate --path db/migration --database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" --verbose up
