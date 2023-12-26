@@ -10,4 +10,6 @@ dropdb:
 	docker exec -it postgres12 dropdb simple_bank
 sqlc:
 	sqlc generate
+test:
+	go test -v --cover --timeout=30s github.com/mjmichael73/go-simple-bank/db/sqlc
 .PHONY: postgres createdb dropdb migrateup migratedown
