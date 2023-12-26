@@ -89,3 +89,12 @@ Note: In postgres Password is not required when you are connecting locally.
 
     - go mod init github.com/mjmichael73/go-simple-bank
     - go mod tidy (to install all dependencies)
+
+### Running First Test
+
+    - go test --timeout 30s github.com/mjmichael73/go-simple-bank/db/sqlc
+    - need to install this: https://github.com/lib/pq
+    - To say to golang compiler that we want to import a library but not use it we need to add an _ before the import
+    - if you install a go package it is indirect in go mod But when you run go mod tidy, the "indirect" will be removed
+    - To check the test result it is recommended to use : testify library:  go get github.com/stretchr/testify
+    - go test --cover --timeout 30s github.com/mjmichael73/go-simple-bank/db/sqlc
