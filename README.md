@@ -78,3 +78,14 @@ Note: In postgres Password is not required when you are connecting locally.
 ### First migration:
 
     - migrate --path db/migration --database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" --verbose up
+
+
+### SQLC commands:
+
+    - sqlc init
+    - sqlc generate
+
+### Go mod commands:
+
+    - go mod init github.com/mjmichael73/go-simple-bank
+    - go mod tidy (to install all dependencies)
